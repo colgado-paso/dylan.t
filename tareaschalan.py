@@ -21,3 +21,19 @@
 #     case "/":
 #         res = num1/num2
 # print(f"el resultado de {num1} {operacion} {num2} = {res}")
+
+# este codigo presenta si el numero ingresado es par o impar
+# numero = int(input("ingrese un numero "))
+
+# if numero % 2 == 0:
+#     print(f"{numero} es un numero par")
+# else:
+#     print(f"{numero} es un numero impar")
+
+
+numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+if numero % 2 == 0:
+    print(f"{numero} el numero es par")
+else:
+    print(f"{numero} el numero es impar")
