@@ -30,19 +30,21 @@
 # else:
 #     print(f"{numero} es un numero impar")
 
+# numeros pares he impares
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for numero in numeros:
+    if numero % 2 == 0:
+        print(f"el {numero} es par")
+    else:
+        print(f"el{numero} es impar")
 
-# if numero % 2 == 0:
-#     print(f"{numero} el numero es par")
-# else:
-#     print(f"{numero} el numero es impar")
 
 # tabbla de multiplicar
-numero = int(input("ingrese un numero para ser multiliplicado"))
+# numero = int(input("ingrese un numero para ser multiliplicado"))
 
-print(f"\nTabla de multiplicar del {numero}:\n")
+# print(f"\nTabla de multiplicar del {numero}:\n")
 
-for i in range(1, 11):
-    resultado = numero * i
-    print(f"{numero} x {i} = {resultado}")
+# for i in range(1, 11):
+#     resultado = numero * i
+#     print(f"{numero} x {i} = {resultado}")
