@@ -1,4 +1,4 @@
-# suma = 0 
+# suma = 0
 # while True:
 #     num=int(input("ungrese un numero , cero para salir"))
 #     if num==0:
@@ -6,11 +6,11 @@
 #     suma+=num
 #     PermissionError(suma)
 #     print(f"la suma total es {suma}")
-#------------------------------------------------
+# ------------------------------------------------
 # Ejercicio 1
 
-# pida al usuario el limite inferior y superior de un rango 
-# despues genere u numero al azar dentro de ese rango 
+# pida al usuario el limite inferior y superior de un rango
+# despues genere u numero al azar dentro de ese rango
 # el segundo numero no , debe ser menor que el primero
 
 # import random
@@ -23,7 +23,7 @@
 # numram=random.randint(num1,num2)
 
 # print(numram)
-#------------------------------------------------------
+# ------------------------------------------------------
 # ejercicio 2
 # import random
 
@@ -40,7 +40,7 @@
 # numram=random.randint(num1,num2)
 
 # print(numram)
-#-------------------------------------------------------
+# -------------------------------------------------------
 # ejercicio 3
 #  pida al usuario que genere un numero random entre 1 y 50
 # luego pida al usuario que adivine el numero
@@ -57,35 +57,62 @@
 #     else:
 #         print("el numero a adiviniar es mayor")
 # print("felicidades has adivinado el numero")
-#---------------------------------------------------------------
-#ejercicio 4
+# ---------------------------------------------------------------
+# ejercicio 4
 
 # import random
 
-# numram=random.randint(1,50)
+# numram = random.randint(1, 50)
 # print(numram)
-# intentos=5
-# num=int(input("adivia el numero random entre 1,50"))
+# intentos = 5
+# num = int(input("adivia el numero random entre 1,50"))
 
-# while numram!=num:
-#     intentos-=1
-#     if intentos==0:
+# while numram != num:
+#     intentos -= 1
+#     if intentos == 0:
 #         print("se han agotado los intentos")
 #         break
-#     if num<numram:
+#     if num < numram:
 #         print("el numero a adiviniar es menor")
 #         print(f"te quedan {intentos} intentos")
 #     else:
 #         print("el numero a adiviniar es mayor")
-# if intentos==0:
+# if intentos == 0:
 #     print("perdiste")
 
 # print("felicidades has adivinado el numero")
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
+import random
+
+
+numram = random.randint(1, 50)
+print(numram)
+print("Adivine el numero entre 1 y 50")
+intentos = 5
+
+num = int(input())
+
+while numram != num:
+    intentos -= 1
+    if intentos == 0:
+        print("se han agotado los intentos")
+        break
+    if num > numram:
+        print("El numero a adivinar es menor")
+    else:
+        print("El numero a adivinar es mayor")
+    print(f"te quedan {intentos} intentos")
+    num = int(input())
+
+if intentos == 0:
+    print("Perdiste")
+else:
+    print("SOS UN GENIO, ADIVINASTE EL NUMERO")
+# ----------------------------------------------------------------
 # ejercicio 5
 # designe 2 peleadoras solicitando sus nombres y puntos de vida
 # cada peleador tendra 50 puntos de vida y  debe mostrar barra de vida
-#las peleas son por turnos cada turno el peleador ataca entre 3 y 15
+# las peleas son por turnos cada turno el peleador ataca entre 3 y 15
 # existe posibilidad de atacaque critico del 20 %
 # gana el que le quite toda la vida al otro
 
@@ -123,13 +150,3 @@
 #     print("ha ganado {p1}")
 # else:
 #     print("ha ganado {p2}")
-
-
-
-
-
-
-
-
-
-

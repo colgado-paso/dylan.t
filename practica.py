@@ -22,3 +22,11 @@
 #     i += 1
 # -----------------------------------------------------------
 # n4
+# pedir al usuario que genere un numero random entre 1 y 50
+# luego pedir al usuario que adivine el numero
+# y mostrar si es correcto o no
+
+import random
+numram = random.randint(1, 50)
+print(numram)
+num = int(input("adivine el numero entre 1 y 50"))
