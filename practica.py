@@ -26,7 +26,85 @@
 # luego pedir al usuario que adivine el numero
 # y mostrar si es correcto o no
 
-import random
-numram = random.randint(1, 50)
-print(numram)
-num = int(input("adivine el numero entre 1 y 50"))
+# --- Configuración del cajero ---
+billetes = {
+    20000: 30,  # 600.000
+    10000: 30,  # 300.000
+    5000: 30    # 150.000
+}
+
+# Usuarios registrados
+usuarios = {
+    "1234": 500000,  # clave : saldo
+    "5678": 300000,
+    "9012": 100000
+}
+
+# Función para calcular si el cajero puede entregar el dinero
+
+
+def puede_entregar(monto):
+    for billete in sorted(billetes.keys(), reverse=True):
+        cantidad_necesaria = monto // billete
+        if cantidad_necesaria > billetes[billete]:
+            cantidad_necesaria = billetes[billete]
+        monto -= cantidad_necesaria * billete
+    return monto == 0
+
+# Función para descontar billetes
+
+
+def entregar_dinero(monto):
+    entrega = {}
+    for billete in sorted(billetes.keys(), reverse=True):
+        cantidad_necesaria = monto // billete
+        if cantidad_necesaria > billetes[billete]:
+            cantidad_necesaria = billetes[billete]
+        if cantidad_necesaria > 0:
+            entrega[billete] = cantidad_necesaria
+            billetes[billete] -= cantidad_necesaria
+            monto -= cantidad_necesaria * billete
+    return entrega
+
+
+# --- Inicio del programa ---
+print("Bienvenido al cajero automático")
+
+clave = input("Ingrese su clave secreta: ")
+
+if clave in usuarios:
+    saldo_usuario = usuarios[clave]
+    while True:
+        print(f"\nSu saldo actual es: {saldo_usuario}")
+        monto = int(
+            input("Ingrese el monto que desea retirar (0 para salir): "))
+
+        if monto == 0:
+            print("Gracias por usar el cajero. ¡Hasta luego!")
+            break
+
+        total_cajero = sum(b * c for b, c in billetes.items())
+
+        if monto > saldo_usuario:
+            print("Error: No tiene suficiente saldo.")
+        elif monto > total_cajero:
+            print("Error: El cajero no tiene suficiente dinero.")
+        elif monto % 5000 != 0:
+            print("Error: El monto debe ser múltiplo de 5000.")
+        elif not puede_entregar(monto):
+            print("Error: No se puede entregar el monto con los billetes disponibles.")
+        else:
+            entrega = entregar_dinero(monto)
+            saldo_usuario -= monto
+            usuarios[clave] = saldo_usuario  # Actualiza el saldo del usuario
+
+            print("Retire su dinero:")
+            for billete, cantidad in entrega.items():
+                print(f"{cantidad} billete(s) de ${billete}")
+
+            print("\nSaldo del cajero ahora es:")
+            for b, c in billetes.items():
+                print(f"${b}: {c} billetes")
+
+else:
+    print("Clave incorrecta. Acceso denegado.")

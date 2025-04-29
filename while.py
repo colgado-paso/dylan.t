@@ -150,3 +150,21 @@ else:
 #     print("ha ganado {p1}")
 # else:
 #     print("ha ganado {p2}")
+# ---------------------------------------------------------------
+# ejercicio 6
+# Crear un cajero automatico
+# Tener en cuenta cajas de billetes de 5000(150.000) , 10000(300.000) y 20000(600.000)
+# Cada caja tine 30 billetes. Verificar si el monto solicitado
+# Esta disponible en el cajero.Verificar si el monto solicidado
+# es posible por el multiplo de los billetes disponibles
+# Al terminar cada transaccion, debe mostrar saldo Disponible
+# Debe haber 3 usuarios cada uno son su saldo correspondiente
+# Usar clave secreta para iniciar y segun la clave
+# asociar el saldo disponible
+# Si la clave es incorrecta, no se podra acceder al cajero
+
+print("bienvenido al cajero automatico ")
+usuario1 = "500.000"
+usuario2 = "300.000"
+usuario3 = "250.000"
+cajero = "1,050.000"
