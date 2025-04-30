@@ -82,32 +82,32 @@
 
 # print("felicidades has adivinado el numero")
 # ----------------------------------------------------------------
-import random
+# import random
 
 
-numram = random.randint(1, 50)
-print(numram)
-print("Adivine el numero entre 1 y 50")
-intentos = 5
+# numram = random.randint(1, 50)
+# print(numram)
+# print("Adivine el numero entre 1 y 50")
+# intentos = 5
 
-num = int(input())
+# num = int(input())
 
-while numram != num:
-    intentos -= 1
-    if intentos == 0:
-        print("se han agotado los intentos")
-        break
-    if num > numram:
-        print("El numero a adivinar es menor")
-    else:
-        print("El numero a adivinar es mayor")
-    print(f"te quedan {intentos} intentos")
-    num = int(input())
+# while numram != num:
+#     intentos -= 1
+#     if intentos == 0:
+#         print("se han agotado los intentos")
+#         break
+#     if num > numram:
+#         print("El numero a adivinar es menor")
+#     else:
+#         print("El numero a adivinar es mayor")
+#     print(f"te quedan {intentos} intentos")
+#     num = int(input())
 
-if intentos == 0:
-    print("Perdiste")
-else:
-    print("SOS UN GENIO, ADIVINASTE EL NUMERO")
+# if intentos == 0:
+#     print("Perdiste")
+# else:
+#     print("SOS UN GENIO, ADIVINASTE EL NUMERO")
 # ----------------------------------------------------------------
 # ejercicio 5
 # designe 2 peleadoras solicitando sus nombres y puntos de vida
@@ -163,8 +163,137 @@ else:
 # asociar el saldo disponible
 # Si la clave es incorrecta, no se podra acceder al cajero
 
-print("bienvenido al cajero automatico ")
-usuario1 = "500.000"
-usuario2 = "300.000"
-usuario3 = "250.000"
-cajero = "1,050.000"
+# intentos = 3
+
+# while intentos >0:
+#     intentos -= 1
+#     color = input("ingrese un color")
+
+#     if color.lower() != "negro":
+#         print(" el color no es el requerido ")
+#     else:
+#         print(" el color es el correcto")
+#         break
+#---------------------------------------------------------------------
+# ejercicio 7
+# la florida 20%, la pintana 30%, puente alto 25%, san joaquin15%
+#grupo familiar: 1=>2% 2 a 4 =>3% , 5 o mas =>4%
+# preguntar al usuarioa en que comuna vive
+#preguntar al usuario con cuantas personas vive ev su hogar
+#el arancel actual es de 200.000 por semestre 
+#basados en las respuestas del usuario y 
+# la informacion dada , calcular su descuento
+
+# print("ingrese su comuna")
+# comuna = int(input("n1= la florida, \n2= la pintana, \n3= puente alto, \n4= san juaquin"))
+# print("ingrese su grupo familiar")
+# grupo_fam = int(input("grupo familiar"))
+# arancel = 200000  
+# descuento = arancel * 0,2
+
+# if comuna.lower() == "la florida":
+#     arancel = descuento * 20
+# elif comuna.lower() == "la pintana":    
+#     arancel = descuento* 30
+# elif comuna.lower() == "puente alto":
+#     arancel = descuento * 25
+# elif comuna.lower() == "san joaquin":
+#     arancel = descuento  * 15
+# else:
+#     print("comuna no valida")
+#     exit()
+# if grupo_fam == 1:
+#     descuento += arancel * 2
+# elif grupo_fam >= 2 and grupo_fam <= 4:
+#     descuento += 3
+# elif grupo_fam >= 5:
+#     descuento = 0.04
+# else:
+#     print("grupo familiar no valido")
+#     exit()
+#----------------------------------------------------------------
+# ejercicio 8
+#clasificar segun categoria y precio 
+#catv 1 +200, cat 2 +400, cat 3 +600
+# precios : 1000 y menos ;3%, entre entre 1001 y 5000 ;5% , 5001 y mas 6%
+#poner lista de 3 productos por categoria, las cat son 1, 2, 3
+#agrega los impuestos al precio , segun las cat luwgo 
+#aplicar descuento al total de la boleta segun el monto
+total = 0
+print(""" 
+      seleccione una categoria
+      1.- zapatillas
+      2.- poleras
+      3.- pelotas
+      """)
+cat = int(input())
+
+if cat ==1:
+    print("""
+          1.- zapatilla puma 2500
+          2.- zapatilla nike 3000
+          3.- zpatilla futbol 4000
+          """)
+    op=int(input())
+    if op == 1:
+        total += 2500+200
+    elif op == 2:
+        total += 3000+200
+    elif op == 3:
+        total += 4000+200
+elif cat ==2:
+    print("""
+          1.- polera puma 1500
+          2.- polera nike 2000
+          3.- polera futbol 5000
+          """)
+    op=int(input())
+    if op == 1:
+        total += 1500+400
+    elif op == 2:
+        total += 2000+400
+    elif op == 3:
+        total += 5000+400
+elif cat ==3:
+    print("""
+          1.- pelota puma 5500
+          2.- pelota nike 6000
+          3.- pelota de playa  1000
+          """)
+    op=int(input())
+    if op == 1:
+        total += 5500+600
+    elif op == 2:
+        total += 6000+600
+    elif op == 3:
+        total += 1000+600
+else:
+    print("opcion invalida")
+
+if total <= 1000:
+    total = total *0.97
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+   
+
+
+

@@ -36,7 +36,7 @@ billetes = {
 # Usuarios registrados
 usuarios = {
     "1234": 500000,  # clave : saldo
-    "5678": 300000,
+    "5678": 300000,                             
     "9012": 100000
 }
 

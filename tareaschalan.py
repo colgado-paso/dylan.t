@@ -31,13 +31,7 @@
 #     print(f"{numero} es un numero impar")
 
 # numeros pares he impares
-numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-for numero in numeros:
-    if numero % 2 == 0:
-        print(f"el {numero} es par")
-    else:
-        print(f"el{numero} es impar")
 
 
 # tabbla de multiplicar
