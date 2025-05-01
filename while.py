@@ -174,26 +174,26 @@
 #     else:
 #         print(" el color es el correcto")
 #         break
-#---------------------------------------------------------------------
+# ---------------------------------------------------------------------
 # ejercicio 7
 # la florida 20%, la pintana 30%, puente alto 25%, san joaquin15%
-#grupo familiar: 1=>2% 2 a 4 =>3% , 5 o mas =>4%
+# grupo familiar: 1=>2% 2 a 4 =>3% , 5 o mas =>4%
 # preguntar al usuarioa en que comuna vive
-#preguntar al usuario con cuantas personas vive ev su hogar
-#el arancel actual es de 200.000 por semestre 
-#basados en las respuestas del usuario y 
+# preguntar al usuario con cuantas personas vive ev su hogar
+# el arancel actual es de 200.000 por semestre
+# basados en las respuestas del usuario y
 # la informacion dada , calcular su descuento
 
 # print("ingrese su comuna")
 # comuna = int(input("n1= la florida, \n2= la pintana, \n3= puente alto, \n4= san juaquin"))
 # print("ingrese su grupo familiar")
 # grupo_fam = int(input("grupo familiar"))
-# arancel = 200000  
+# arancel = 200000
 # descuento = arancel * 0,2
 
 # if comuna.lower() == "la florida":
 #     arancel = descuento * 20
-# elif comuna.lower() == "la pintana":    
+# elif comuna.lower() == "la pintana":
 #     arancel = descuento* 30
 # elif comuna.lower() == "puente alto":
 #     arancel = descuento * 25
@@ -211,89 +211,198 @@
 # else:
 #     print("grupo familiar no valido")
 #     exit()
-#----------------------------------------------------------------
+# -----------------------------------------------------------------------------------
+# print("seleccione la comuna donde usted vive ")
+
+# print("""
+#       1.- la florida
+#       2.- la pintana
+#       3.- puente alto
+#       4.- san joaquin
+#       """)
+
+# comuna = input(
+#     "ingrese el numero de la comuna donde usted vive ").lower().strip()
+
+# if comuna == "1":
+#     descuento = 20
+# elif comuna == "2":
+#     descuento = 30
+# elif comuna == "3":
+#     descuento = 25
+# elif comuna == "4":
+#     descuento = 15
+# else:
+#     print("Ingrese una opcion correcta ")
+#     exit()
+# try:
+#     familia = int(
+#         input("¿ cuantas personas viven en su casa incluyendolo a usted ?"))
+# except ValueError:
+#     print(" ingrese un numero valido")
+#     exit()
+
+# if familia == 1:
+#     descuento += 2
+# elif 2 <= familia <= 4:
+#     descuento += 3
+# else:
+#     descuento += 4
+
+# valor_base = 200000
+# descTotal = valor_base * (descuento / 100)
+# print(f"su descuento es de ${descTotal}")
+# print(f"su arancel es de ${valor_base - descTotal}")
+
+
+# ----------------------------------------------------------------
 # ejercicio 8
-#clasificar segun categoria y precio 
-#catv 1 +200, cat 2 +400, cat 3 +600
+# clasificar segun categoria y precio
+# catv 1 +200, cat 2 +400, cat 3 +600
 # precios : 1000 y menos ;3%, entre entre 1001 y 5000 ;5% , 5001 y mas 6%
-#poner lista de 3 productos por categoria, las cat son 1, 2, 3
-#agrega los impuestos al precio , segun las cat luwgo 
-#aplicar descuento al total de la boleta segun el monto
+# poner lista de 3 productos por categoria, las cat son 1, 2, 3
+# agrega los impuestos al precio , segun las cat luwgo
+# aplicar descuento al total de la boleta segun el monto
+# total = 0
+# print("""
+#       seleccione una categoria
+#       1.- zapatillas
+#       2.- poleras
+#       3.- pelotas
+#       """)
+# cat = int(input())
+
+# if cat == 1:
+#     print("""
+#           1.- zapatilla puma 2500
+#           2.- zapatilla nike 3000
+#           3.- zpatilla futbol 4000
+#           """)
+#     op = int(input())
+#     if op == 1:
+#         total += 2500+200
+#     elif op == 2:
+#         total += 3000+200
+#     elif op == 3:
+#         total += 4000+200
+# elif cat == 2:
+#     print("""
+#           1.- polera puma 1500
+#           2.- polera nike 2000
+#           3.- polera futbol 5000
+#           """)
+#     op = int(input())
+#     if op == 1:
+#         total += 1500+400
+#     elif op == 2:
+#         total += 2000+400
+#     elif op == 3:
+#         total += 5000+400
+# elif cat == 3:
+#     print("""
+#           1.- pelota puma 5500
+#           2.- pelota nike 6000
+#           3.- pelota de playa  1000
+#           """)
+#     op = int(input())
+#     if op == 1:
+#         total += 5500+600
+#     elif op == 2:
+#         total += 6000+600
+#     elif op == 3:
+#         total += 1000+600
+# else:
+#     print("opcion invalida")
+
+# if total <= 1000:
+#     total = total * 0.97
+# print(f"su total a pagar es de {total}")
+# ---------------------------------------------------------
+# codigo ia
 total = 0
-print(""" 
-      seleccione una categoria
+print("""
+      seleccione una categoria 
       1.- zapatillas
       2.- poleras
       3.- pelotas
       """)
-cat = int(input())
 
-if cat ==1:
+try:
+    cat = int(input("ingrese el numero de la categoria "))
+except ValueError:
+    print(" debe ingresar un numero valido ")
+    exit()
+
+if cat == 1:
     print("""
-          1.- zapatilla puma 2500
-          2.- zapatilla nike 3000
-          3.- zpatilla futbol 4000
+          1.- zapatillas puma $2500
+          2.- zapatillas nike $3000
+          3.- zapatillas futbol $4000
           """)
-    op=int(input())
+    try:
+        op = int(input("seleccione un producto "))
+    except ValueError:
+        print("debe ingresar un numero valido ")
+        exit()
+
     if op == 1:
-        total += 2500+200
+        total += 2500 + 200
     elif op == 2:
-        total += 3000+200
+        total += 3000 + 200
     elif op == 3:
-        total += 4000+200
-elif cat ==2:
+        total += 4000 + 200
+    else:
+        print("opcion invalida ")
+        exit()
+
+elif cat == 2:
     print("""
-          1.- polera puma 1500
-          2.- polera nike 2000
-          3.- polera futbol 5000
+          1.- polera puma $1500
+          2.- polera nike $2000
+          3.- polera futbol $5000
           """)
-    op=int(input())
+    try:
+        op = int(input("seleccione un producto "))
+    except ValueError:
+        print("debe ingresar un numero valido ")
+        exit()
+
     if op == 1:
-        total += 1500+400
+        total += 1500 + 400
     elif op == 2:
-        total += 2000+400
+        total += 2000 + 400
     elif op == 3:
-        total += 5000+400
-elif cat ==3:
+        total += 5000 + 400
+    else:
+        print("opcion invalida ")
+        exit()
+
+elif cat == 3:
     print("""
-          1.- pelota puma 5500
-          2.- pelota nike 6000
-          3.- pelota de playa  1000
+          1.- pelota puma $5500
+          2.- pelota nike $6000
+          3.- pelota de playa $1000
           """)
-    op=int(input())
+    try:
+        op = int(input("seleccione un producto "))
+    except ValueError:
+        print("debe ingresar un numero valido ")
+        exit()
+
     if op == 1:
-        total += 5500+600
+        total += 5500 + 600
     elif op == 2:
-        total += 6000+600
+        total += 6000 + 600
     elif op == 3:
-        total += 1000+600
+        total += 1000 + 600
+    else:
+        print("opcion invalida ")
+        exit()
 else:
-    print("opcion invalida")
+    print(" opcion de categoria invalida ")
+    exit()
 
 if total <= 1000:
-    total = total *0.97
-    
+    total = total * 0.97
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-   
-
-
-
+print(f" su total a pegar es de ${total}")
