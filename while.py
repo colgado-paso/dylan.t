@@ -319,90 +319,132 @@
 # print(f"su total a pagar es de {total}")
 # ---------------------------------------------------------
 # codigo ia
-total = 0
-print("""
-      seleccione una categoria 
-      1.- zapatillas
-      2.- poleras
-      3.- pelotas
-      """)
+# total = 0
+# print("""
+#       seleccione una categoria 
+#       1.- zapatillas
+#       2.- poleras
+#       3.- pelotas
+#       """)
 
-try:
-    cat = int(input("ingrese el numero de la categoria "))
-except ValueError:
-    print(" debe ingresar un numero valido ")
-    exit()
+# try:
+#     cat = int(input("ingrese el numero de la categoria "))
+# except ValueError:
+#     print(" debe ingresar un numero valido ")
+#     exit()
 
-if cat == 1:
-    print("""
-          1.- zapatillas puma $2500
-          2.- zapatillas nike $3000
-          3.- zapatillas futbol $4000
-          """)
-    try:
-        op = int(input("seleccione un producto "))
-    except ValueError:
-        print("debe ingresar un numero valido ")
-        exit()
+# if cat == 1:
+#     print("""
+#           1.- zapatillas puma $2500
+#           2.- zapatillas nike $3000
+#           3.- zapatillas futbol $4000
+#           """)
+#     try:
+#         op = int(input("seleccione un producto "))
+#     except ValueError:
+#         print("debe ingresar un numero valido ")
+#         exit()
 
-    if op == 1:
-        total += 2500 + 200
-    elif op == 2:
-        total += 3000 + 200
-    elif op == 3:
-        total += 4000 + 200
-    else:
-        print("opcion invalida ")
-        exit()
+#     if op == 1:
+#         total += 2500 + 200
+#     elif op == 2:
+#         total += 3000 + 200
+#     elif op == 3:
+#         total += 4000 + 200
+#     else:
+#         print("opcion invalida ")
+#         exit()
 
-elif cat == 2:
-    print("""
-          1.- polera puma $1500
-          2.- polera nike $2000
-          3.- polera futbol $5000
-          """)
-    try:
-        op = int(input("seleccione un producto "))
-    except ValueError:
-        print("debe ingresar un numero valido ")
-        exit()
+# elif cat == 2:
+#     print("""
+#           1.- polera puma $1500
+#           2.- polera nike $2000
+#           3.- polera futbol $5000
+#           """)
+#     try:
+#         op = int(input("seleccione un producto "))
+#     except ValueError:
+#         print("debe ingresar un numero valido ")
+#         exit()
 
-    if op == 1:
-        total += 1500 + 400
-    elif op == 2:
-        total += 2000 + 400
-    elif op == 3:
-        total += 5000 + 400
-    else:
-        print("opcion invalida ")
-        exit()
+#     if op == 1:
+#         total += 1500 + 400
+#     elif op == 2:
+#         total += 2000 + 400
+#     elif op == 3:
+#         total += 5000 + 400
+#     else:
+#         print("opcion invalida ")
+#         exit()
 
-elif cat == 3:
-    print("""
-          1.- pelota puma $5500
-          2.- pelota nike $6000
-          3.- pelota de playa $1000
-          """)
-    try:
-        op = int(input("seleccione un producto "))
-    except ValueError:
-        print("debe ingresar un numero valido ")
-        exit()
+# elif cat == 3:
+#     print("""
+#           1.- pelota puma $5500
+#           2.- pelota nike $6000
+#           3.- pelota de playa $1000
+#           """)
+#     try:
+#         op = int(input("seleccione un producto "))
+#     except ValueError:
+#         print("debe ingresar un numero valido ")
+#         exit()
 
-    if op == 1:
-        total += 5500 + 600
-    elif op == 2:
-        total += 6000 + 600
-    elif op == 3:
-        total += 1000 + 600
-    else:
-        print("opcion invalida ")
-        exit()
+#     if op == 1:
+#         total += 5500 + 600
+#     elif op == 2:
+#         total += 6000 + 600
+#     elif op == 3:
+#         total += 1000 + 600
+#     else:
+#         print("opcion invalida ")
+#         exit()
+# else:
+#     print(" opcion de categoria invalida ")
+#     exit()
+
+# if total <= 1000:
+#     total = total * 0.97
+
+# print(f" su total a pegar es de ${total}")
+#----------------------------------------------------------------------
+
+creditos = 0
+nacionalida = int(input("ingrese su nacionalidad: 1. chilena, 2. extranjera:"))
+sueldo = int(int("ingrese su sueldo mensual"))
+nivel_educacional = int(input("ingrese su nivel edudacional: 1. basico, 2.medio, 3. superior "))
+
+if nacionalida == 1:
+    creditos += 300000
+elif nacionalida == 2:
+    creditos += 0
 else:
-    print(" opcion de categoria invalida ")
+    print("nacionalidad no valida")
     exit()
 
-if total <= 1000:
-    total = total * 0.97
+if sueldo < 500000:
+    creditos += 0
+elif sueldo <= 1000000:
+    creditos += 300000
+elif sueldo <= 1500000:
+    creditos += 500000
+elif sueldo <= 2000000:
+    creditos += 1000000
+else:
+    creditos += 0
+    print("sieldo no valido")
+    exit()
 
-print(f" su total a pegar es de ${total}")
+if nivel_educacional == 1:
+    creditos += 1
+elif nivel_educacional == 2:
+    creditos += 1.3
+elif nivel_educacional == 3:
+    creditos += 1.5
+else:
+    print("nivel educacional no valido ")
+    exit()
+
+print(f"su puntajes de creditos es de {creditos}")
+
+
+
