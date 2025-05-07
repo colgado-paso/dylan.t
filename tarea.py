@@ -113,24 +113,25 @@
 # else:
 #     print(" carrera invalida ")
 # -----------------------------------------------------------------
-import random
+# import random
 
-numram = random.randint(1, 50)
-print(numram)
-intentos = 5
-num = int(input("adivine el numero random entre 1,50 "))
+# numram = random.randint(1, 50)
+# print(numram)
+# intentos = 5
+# num = int(input("adivine el numero random entre 1,50 "))
 
-while numram != num:
-    intentos -= 1
-    if intentos == 0:
-        print("se han agotados los intentos ")
-        break
-    if num < numram:
-        print("el numero a divinar es menor ")
-        print(f"te quedan {intentos} intentos ")
-    else:
-        print("el numero adivinar es mayor ")
-if intentos == 0:
-    print("perdiste ")
+# while numram != num:
+#     intentos -= 1
+#     if intentos == 0:
+#         print("se han agotados los intentos ")
+#         break
+#     if num < numram:
+#         print("el numero a divinar es menor ")
+#         print(f"te quedan {intentos} intentos ")
+#     else:
+#         print("el numero adivinar es mayor ")
+# if intentos == 0:
+#     print("perdiste ")
 
-print("felicidades has adivinado el numero ")
+# print("felicidades has adivinado el numero ")
+# -----------------------------------------------------------------
