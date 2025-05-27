@@ -110,7 +110,35 @@ pass3 = None
 def registrar_usuario():
     global user1, user2, user3, pass1, pass2, pass3
     while True:
-        
+        try:
+            nuevo_usuario = input("ingrese un nuevo nombre de usuario ").strip()
+            nueva_contraseña = input("ingrese una nueva contraseña ").strip()
+
+            if not nuevo_usuario or not nueva_contraseña:
+                print("usuario y contraseña no pueden estar vacios ")
+                continue
+            if user1 is None:
+                user1, pass1 = nuevo_usuario, nueva_contraseña
+                print("usuario registrado exitosamente ")
+                break
+            elif user2 is None:
+                user2, pass2 = nuevo_usuario, nueva_contraseña
+                print("usuario reagistrado exitosamenete ")
+                break
+            elif user3 is None:
+                user3, pass3 = nuevo_usuario, nueva_contraseña
+                print("usuario registrado exitosamente ")
+                break
+            else:
+                print("ya existen 3 usuarios registrados ")
+                break
+        except Exception:
+            print("error al registrar usuarios, intente nuevamente ")
+
+def menu_usuario():
+    global user1, user2, user3, pass1, pass2, pass3
+    
+
 
 
 
