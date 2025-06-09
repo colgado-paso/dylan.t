@@ -1,29 +1,16 @@
-print("bienvenido a la calculadora")
-print(" para salir escriba salir")
-print("las operaciones que se ocuparan son suma,resta,multi,div")
+num1 = int(input("numero 1 ")) 
+num2 = int(input("numero 2 ")) 
 
-resultado=""
-while True:
-    if not resultado:
-        resultado= input("ingrese numer: ")
-        if resultado.lower() == "salir":
-            break
-        resultado = input(resultado)
-    op = input("ingrse operacion: ")
-    if op.lower() == "salir":
-        break
-    n2 = input(n2)
+operacion = input("introduce una operacion (+ - * /)")
 
-    if op.lower() == "suma":
-        resultado += n2
-    elif op.lower() == "resta":
-        resultado -= n2
-    elif op.lower() == "multi":
-        resultado *= n2 
-    elif op.lower() == "div":
-        resultado /= n2
-    else:
-        print("operacion no valida")
-        break
+match operacion:
+    case "+":
+        res = num1+num2
+    case "-":
+        res = num1-num2
+    case "*":
+        res = num1*num2
+    case "/":
+        res = num1/num2
 
-    print(f"el resultado es {resultado} ")
+print(f"resultado de {num1} {operacion} {num2} = {res}")
