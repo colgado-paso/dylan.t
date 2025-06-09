@@ -212,37 +212,82 @@
 # y que use while true, use try, use if elif else
 # no ocupe listas
 
-while True:
-    try:
-        perros = int(input("¿Cuántos perros participan? "))
-        if perros > 0:
-            break
-        else:
-            print("Debe ingresar un número mayor a 0.")
-    except Exception:
-        print("Ingrese un número válido.")
+# while True:
+#     try:
+#         perros = int(input("¿Cuántos perros participan? "))
+#         if perros > 0:
+#             break
+#         else:
+#             print("Debe ingresar un número mayor a 0.")
+#     except Exception:
+#         print("Ingrese un número válido.")
 
-mayor_conejos = -1
-perro_ganador = None
+# mayor_conejos = -1
+# perro_ganador = None
 
-contador = 1
-while contador <= perros:
-    while True:
-        try:
-            atrapados = int(input(f"¿Cuántos conejos atrapó el perro {contador}? "))
-            if atrapados >= 0:
-                break
-            else:
-                print("Debe ingresar un número mayor o igual a 0.")
-        except Exception:
-            print("Ingrese un número válido.")
-    if atrapados > mayor_conejos:
-        mayor_conejos = atrapados
-        perro_ganador = contador
-    contador += 1
+# contador = 1
+# while contador <= perros:
+#     while True:
+#         try:
+#             atrapados = int(input(f"¿Cuántos conejos atrapó el perro {contador}? "))
+#             if atrapados >= 0:
+#                 break
+#             else:
+#                 print("Debe ingresar un número mayor o igual a 0.")
+#         except Exception:
+#             print("Ingrese un número válido.")
+#     if atrapados > mayor_conejos:
+#         mayor_conejos = atrapados
+#         perro_ganador = contador
+#     contador += 1
 
-print(f"Participaron {perros} perros.")
-print(f"El perro que atrapó más conejos fue el perro {perro_ganador} con {mayor_conejos} conejos.")
+# print(f"Participaron {perros} perros.")
+# print(f"El perro que atrapó más conejos fue el perro {perro_ganador} con {mayor_conejos} conejos.")
+# productos = []
+# precios = []
+
+# while True:
+#     print("""
+# Seleccione una opción:
+# 1.- Agregar producto
+# 2.- Mostrar productos y precios
+# 3.- Crear boleta
+# 4.- Salir
+# """)
+#     op = input("Opción seleccionada: ")
+#     match op:
+#         case "1":
+#             nombre = input("Ingrese el nombre del producto: ")
+#             try:
+#                 precio = float(input("Ingrese el precio del producto: "))
+#                 productos.append(nombre)
+#                 precios.append(precio)
+#                 print("Producto agregado correctamente.")
+#             except ValueError:
+#                 print("Precio inválido. Intente nuevamente.")
+#         case "2":
+#             if not productos:
+#                 print("No hay productos en el carrito.")
+#             else:
+#                 print("Productos en el carrito:")
+#                 for i in range(len(productos)):
+#                     print(f"{i+1}. {productos[i]} - ${precios[i]:.2f}")
+#         case "3":
+#             if not productos:
+#                 print("No hay productos para crear boleta.")
+#             else:
+#                 print("Boleta de compra:")
+#                 total = 0
+#                 for i in range(len(productos)):
+#                     print(f"{productos[i]} - ${precios[i]:.2f}")
+#                     total += precios[i]
+#                 print(f"Total a pagar: ${total:.2f}")
+#         case "4":
+#             print("Saliendo del programa...")
+#             break
+#         case _:
+#             print("Opción inválida.")
+
 
 
 
