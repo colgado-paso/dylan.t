@@ -77,51 +77,52 @@
 # crear boleta 
 # salir 
 
-productos = []
-precios = []
+# productos = []
+# precios = []
 
-while True:
-    print("""
-Seleccione una opción:
-    1.- Agregar producto (nombre del producto y precio)
-    2.- Mostrar productos
-    3.- Crear boleta
-    4.- Salir
-""")
-    op = input("Opción seleccionada: ")
+# while True:
+#     print("""
+# Seleccione una opción:
+#     1.- Agregar producto (nombre del producto y precio)
+#     2.- Mostrar productos
+#     3.- Crear boleta
+#     4.- Salir
+# """)
+#     op = input("Opción seleccionada: ")
 
-    match op:
-        case "1":
-            nombre = input("Ingrese el nombre del producto: ")
-            try:
-                precio = float(input("Ingrese el precio del producto: "))
-                productos.append(nombre)
-                precios.append(precio)
-                print("El producto se agregó correctamente.")
-            except ValueError:
-                print("Precio inválido.")
-        case "2":
-            if productos:
-                print("Productos disponibles:")
-                for i in range(len(productos)):
-                    print(f"{i+1}. {productos[i]} - ${precios[i]}")
-            else:
-                print("No hay productos en el carrito.")
-        case "3":
-            if productos:
-                print("----- Boleta -----")
-                total = 0
-                for i in range(len(productos)):
-                    print(f"{productos[i]}: ${precios[i]}")
-                    total += precios[i]
-                print(f"Total a pagar: ${total}")
-            else:
-                print("No hay productos para generar boleta.")
-        case "4":
-            print("Saliendo del programa...")
-            break
-        case _:
-            print("Opción inválida.")
+#     match op:
+#         case "1":
+#             nombre = input("Ingrese el nombre del producto: ")
+#             try:
+#                 precio = float(input("Ingrese el precio del producto: "))
+#                 productos.append(nombre)
+#                 precios.append(precio)
+#                 print("El producto se agregó correctamente.")
+#             except ValueError:
+#                 print("Precio inválido.")
+#         case "2":
+#             if productos:
+#                 print("Productos disponibles:")
+#                 for i in range(len(productos)):
+#                     print(f"{i+1}. {productos[i]} - ${precios[i]}")
+#             else:
+#                 print("No hay productos en el carrito.")
+#         case "3":
+#             if productos:
+#                 print("----- Boleta -----")
+#                 total = 0
+#                 for i in range(len(productos)):
+#                     print(f"{productos[i]}: ${precios[i]}")
+#                     total += precios[i]
+#                 print(f"Total a pagar: ${total}")
+#             else:
+#                 print("No hay productos para generar boleta.")
+#         case "4":
+#             print("Saliendo del programa...")
+#             break
+#         case _:
+#             print("Opción inválida.")
+
 
 
 
