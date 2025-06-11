@@ -1,33 +1,33 @@
 #N1
-def menu_frutas():
-    frutas = ["manzana", "platanos", "kiwis","naranja"]
-    while True:
-        print("""\n --Menu de Frutas 
-              1.- ver todas las frutas 
-              2.- agregar frutas 
-              3.- eliminar fruta 
-              4.- salir """)
-        op = input("elija una opcion ")
+    # def menu_frutas():
+    #     frutas = ["manzana", "platanos", "kiwis","naranja"]
+    #     while True:
+    #         print("""\n --Menu de Frutas 
+    #               1.- ver todas las frutas 
+    #               2.- agregar frutas 
+    #               3.- eliminar fruta 
+    #               4.- salir """)
+    #         op = input("elija una opcion ")
 
-        match op:
-            case "1":
-                print("frutas",frutas )
-            case "2":
-                nueva = input("ingrese el nombre de la fruta ")
-                frutas.append(nueva)
-                print(f"{nueva} agregada ")
-            case "3":
-                eliminar = input("que fruta desea eliminar? ")
-                if eliminar in frutas:
-                    frutas.remove(eliminar)
-                    print(f"{eliminar} eliminada ")
-                else:
-                    print("fruta no encontrada ")
-            case "4":
-                print("saliendo del programa...")
-                break
-            case _:
-                print("opcion invalida...")
+    #         match op:
+    #             case "1":
+    #                 print("frutas",frutas )
+    #             case "2":
+    #                 nueva = input("ingrese el nombre de la fruta ")
+    #                 frutas.append(nueva)
+    #                 print(f"{nueva} agregada ")
+    #             case "3":
+    #                 eliminar = input("que fruta desea eliminar? ")
+    #                 if eliminar in frutas:
+    #                     frutas.remove(eliminar)
+    #                     print(f"{eliminar} eliminada ")
+    #                 else:
+    #                     print("fruta no encontrada ")
+    #             case "4":
+    #                 print("saliendo del programa...")
+    #                 break
+    #             case _:
+    #                 print("opcion invalida...")
 #---------------------------------------------------------------------------------
 #N2 sistema educativo 
 
@@ -89,6 +89,71 @@ def menu_frutas():
 #                 break
 #             case _:
 #                 print("opcion no reconocida ")
+
+
+notas = []
+
+while True:
+    print("""
+Seleccione una opción:
+    1.- Ingresar una nota
+    2.- Borrar una nota
+    3.- Mostrar notas
+    4.- Sacar promedio, nota mayor y nota menor
+    5.- Limpiar todas las notas
+    6.- Salir
+""")
+    op = input("Seleccione una opción: ")
+
+    match op:
+        case "1":
+            try:
+                nota = float(input("Ingrese la nota: "))
+                notas.append(nota)
+                print("Nota agregada correctamente.")
+            except ValueError:
+                print("Nota inválida.")
+        case "2":
+            if notas:
+                for n in notas:
+                    print(n)
+                try:
+                    nota_borrar = float(input("Ingrese la nota a borrar: "))
+                    if nota_borrar in notas:
+                        notas.remove(nota_borrar)
+                        print(f"Nota {nota_borrar} borrada.")
+                    else:
+                        print("La nota no está en la lista.")
+                except ValueError:
+                    print("Nota inválida.")
+            else:
+                print("No hay notas para borrar.")
+        case "3":
+            if notas:
+                print("Notas ingresadas:")
+                for n in notas:
+                    print(n)
+            else:
+                print("No hay notas ingresadas.")
+        case "4":
+            if notas:
+                promedio = sum(notas) / len(notas)
+                mayor = max(notas)
+                menor = min(notas)
+                print(f"Promedio: {promedio}")
+                print(f"Nota mayor: {mayor}")
+                print(f"Nota menor: {menor}")
+            else:
+                print("No hay notas para calcular.")
+        case "5":
+            notas.clear()
+            print("Todas las notas han sido eliminadas.")
+        case "6":
+            print("Saliendo del programa...")
+            break
+        case _:
+            print("Opción inválida.")
+
 
 
 

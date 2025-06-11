@@ -122,6 +122,81 @@
 #             break
 #         case _:
 #             print("Opción inválida.")
+#---------------------------------------------------------------------------------------
+# crea un programa de manejo de notas 
+#  ingresa nota 
+# borrar nota
+# mostrar nota 
+# sacar promedio, notas mayor y notas menor 
+# limpiar todas las notas 
+
+# notas = []
+
+# while True:
+#     print("""
+# Seleccione una opción:
+#     1.- Ingresar una nota
+#     2.- Borrar una nota
+#     3.- Mostrar notas
+#     4.- Sacar promedio, nota mayor y nota menor
+#     5.- Limpiar todas las notas
+#     6.- Salir
+# """)
+#     op = input("Seleccione una opción: ")
+
+#     match op:
+#         case 1:
+#             try:
+#                 nota = float(input("ingrese la nota "))
+#                 notas.append(nota)
+#                 print("la nota se ha agregado correctamente ")
+#             except ValueError:
+#                 print("errro, porfavor intente nuevamente ")
+#         case 2:
+#             if notas:
+#                 for n in notas:
+#                     print(n)
+#                 try:
+#                     nota_borrar = float(input("ingrese la nota que desea borrar "))
+#                     if nota_borrar in notas:
+#                         notas.remove(nota_borrar)
+#                         print(f"nota {nota_borrar} borrada ")
+#                     else:
+#                         print("la nota no esta en la lista ")
+#                 except ValueError:
+#                     print("nota invalida")
+#             else:
+#                 print("no hay notas para borrar ")
+#         case 3:
+#             if notas:
+#                 print("nota ingresada ")
+#                 for n in notas:
+#                     print(n)
+#             else:
+#                 print("no hay notas ingresadas ")
+#         case 4:
+#             if notas:
+#                 promedio = sum(notas) / len(notas)
+#                 mayor = max(notas)
+#                 menor = min(notas)
+#                 print(f"promedio {promedio} ")
+#                 print(f"nota mayor {mayor}")
+#                 print(f"nota menor {menor} ")
+#             else:
+#                 print("no hay notas para calcular ")
+#         case 5:
+#             notas.clear()
+#             print("todas las notas han sido eliminadas ")
+#         case 6:
+#             print("saliendo del programa ...")
+#             break
+#         case _:
+#             print("opcin invalida ")
+#---------------------------------------------------------------------------
+
+
+            
+            
 
 
 
