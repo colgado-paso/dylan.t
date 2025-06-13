@@ -195,7 +195,16 @@
 #---------------------------------------------------------------------------
 
 
-            
+entrada = input("Por favor, ingrese un número: ")
+
+try:
+    numero = int(entrada)
+    if numero in numeros:
+        print(f"El número {numero} sí está en la lista.")
+    else:
+        print(f"El número {numero} no está en la lista.")
+except ValueError:
+    print("Por favor, ingrese un número válido.")
             
 
 

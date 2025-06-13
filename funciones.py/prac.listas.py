@@ -91,68 +91,131 @@
 #                 print("opcion no reconocida ")
 
 
-notas = []
+# notas = []
 
-while True:
-    print("""
-Seleccione una opción:
-    1.- Ingresar una nota
-    2.- Borrar una nota
-    3.- Mostrar notas
-    4.- Sacar promedio, nota mayor y nota menor
-    5.- Limpiar todas las notas
-    6.- Salir
-""")
-    op = input("Seleccione una opción: ")
+# while True:
+#     print("""
+# Seleccione una opción:
+#     1.- Ingresar una nota
+#     2.- Borrar una nota
+#     3.- Mostrar notas
+#     4.- Sacar promedio, nota mayor y nota menor
+#     5.- Limpiar todas las notas
+#     6.- Salir
+# """)
+#     op = input("Seleccione una opción: ")
 
-    match op:
-        case "1":
-            try:
-                nota = float(input("Ingrese la nota: "))
-                notas.append(nota)
-                print("Nota agregada correctamente.")
-            except ValueError:
-                print("Nota inválida.")
-        case "2":
-            if notas:
-                for n in notas:
-                    print(n)
-                try:
-                    nota_borrar = float(input("Ingrese la nota a borrar: "))
-                    if nota_borrar in notas:
-                        notas.remove(nota_borrar)
-                        print(f"Nota {nota_borrar} borrada.")
-                    else:
-                        print("La nota no está en la lista.")
-                except ValueError:
-                    print("Nota inválida.")
-            else:
-                print("No hay notas para borrar.")
-        case "3":
-            if notas:
-                print("Notas ingresadas:")
-                for n in notas:
-                    print(n)
-            else:
-                print("No hay notas ingresadas.")
-        case "4":
-            if notas:
-                promedio = sum(notas) / len(notas)
-                mayor = max(notas)
-                menor = min(notas)
-                print(f"Promedio: {promedio}")
-                print(f"Nota mayor: {mayor}")
-                print(f"Nota menor: {menor}")
-            else:
-                print("No hay notas para calcular.")
-        case "5":
-            notas.clear()
-            print("Todas las notas han sido eliminadas.")
-        case "6":
-            print("Saliendo del programa...")
-            break
-        case _:
-            print("Opción inválida.")
+#     match op:
+#         case "1":
+#             try:
+#                 nota = float(input("Ingrese la nota: "))
+#                 notas.append(nota)
+#                 print("Nota agregada correctamente.")
+#             except ValueError:
+#                 print("Nota inválida.")
+#         case "2":
+#             if notas:
+#                 for n in notas:
+#                     print(n)
+#                 try:
+#                     nota_borrar = float(input("Ingrese la nota a borrar: "))
+#                     if nota_borrar in notas:
+#                         notas.remove(nota_borrar)
+#                         print(f"Nota {nota_borrar} borrada.")
+#                     else:
+#                         print("La nota no está en la lista.")
+#                 except ValueError:
+#                     print("Nota inválida.")
+#             else:
+#                 print("No hay notas para borrar.")
+#         case "3":
+#             if notas:
+#                 print("Notas ingresadas:")
+#                 for n in notas:
+#                     print(n)
+#             else:
+#                 print("No hay notas ingresadas.")
+#         case "4":
+#             if notas:
+#                 promedio = sum(notas) / len(notas)
+#                 mayor = max(notas)
+#                 menor = min(notas)
+#                 print(f"Promedio: {promedio}")
+#                 print(f"Nota mayor: {mayor}")
+#                 print(f"Nota menor: {menor}")
+#             else:
+#                 print("No hay notas para calcular.")
+#         case "5":
+#             notas.clear()
+#             print("Todas las notas han sido eliminadas.")
+#         case "6":
+#             print("Saliendo del programa...")
+#             break
+#         case _:
+#             print("Opción inválida.")
+#--------------------------------------------------------------------
+
+# agenda = []
+
+# def agregar_contacto():
+#     nombre = input("Nombre del contacto: ")
+#     telefonos = input("Introduce teléfonos separados por comas: ").split(",")
+#     telefonos = [t.strip() for t in telefonos]
+#     agenda.append({"nombre": nombre, "telefonos": telefonos})
+#     print("Contacto agregado.\n")
+
+# def buscar_contacto():
+#     nombre = input("Nombre del contacto a buscar: ")
+#     for contacto in agenda:
+#         if contacto["nombre"].lower() == nombre.lower():
+#             print(f"{contacto['nombre']} - Teléfonos: {', '.join(contacto['telefonos'])}")
+#             return
+#     print("Contacto no encontrado.")
+
+# def mostrar_agenda():
+#     if not agenda:
+#         print("Agenda vacía.")
+#         return
+#     for contacto in agenda:
+#         print(f"{contacto['nombre']} - Teléfonos: {', '.join(contacto['telefonos'])}")
+
+# while True:
+#     print("\n--- Agenda Telefónica ---")
+#     print("1. Agregar contacto")
+#     print("2. Buscar contacto")
+#     print("3. Mostrar agenda")
+#     print("4. Salir")
+#     opcion = input("Elige una opción: ")
+
+#     if opcion == "1":
+#         agregar_contacto()
+#     elif opcion == "2":
+#         buscar_contacto()
+#     elif opcion == "3":
+#         mostrar_agenda()
+#     elif opcion == "4":
+#         print("Saliendo de la agenda.")
+#         break
+#     else:
+#         print("Opción inválida.")
+#------------------------------------------------------------------------------------------
+
+numeros = [1, 3, 7, 8, 9, 5, 4, 6]
+
+entrada = input("porfavor, ingrese un numero ")
+
+try:
+    numero = input(entrada)
+    if numero in numeros:
+        print(f"el numero {numero} si esta en la lista ")
+    else:
+        print(f"el numero {numero} no se encuentra en la lista")
+except ValueError:
+    print("error, porvafor ingrese un numero valido ")
+    
+
+
+
 
 
 
