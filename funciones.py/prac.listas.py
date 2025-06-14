@@ -200,18 +200,33 @@
 #         print("Opción inválida.")
 #------------------------------------------------------------------------------------------
 
-numeros = [1, 3, 7, 8, 9, 5, 4, 6]
+# numeros = [1, 3, 7, 8, 9, 5, 4, 6]
 
-entrada = input("porfavor, ingrese un numero ")
+# entrada = input("porfavor, ingrese un numero ")
 
-try:
-    numero = input(entrada)
-    if numero in numeros:
-        print(f"el numero {numero} si esta en la lista ")
-    else:
-        print(f"el numero {numero} no se encuentra en la lista")
-except ValueError:
-    print("error, porvafor ingrese un numero valido ")
+# try:
+#     numero = input(entrada)
+#     if numero in numeros:
+#         print(f"el numero {numero} si esta en la lista ")
+#     else:
+#         print(f"el numero {numero} no se encuentra en la lista")
+# except ValueError:
+#     print("error, porvafor ingrese un numero valido ")
+#--------------------------------------------------------------------------------------------------------
+
+# participiantes = ["juan", "laura", "pedro",
+#                   "raul", "david" ]
+
+# print("primera posicion ", participiantes[0])
+# print("segunda posicion ", participiantes[1])
+# print("tercera posicion ", participiantes[2])
+# print("cuarta posicion ",  participiantes[3])
+# print("quinta posicion ",  participiantes[4])
+
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+
+print(lista1 + lista2)
     
 
 
