@@ -120,7 +120,8 @@ while True:
           1.- agregar producto
           2.- mostrar producto
           3.- actualizar producto
-          4.- salir  
+          4.- borrar productos 
+          5.- salir   
           """)
     op = int(input("seleccione un producto "))
     match op:
@@ -143,8 +144,10 @@ while True:
                       np = int(input("ingrese nuevo precio: "))
                       list_prod[opc-1]["nombre"]=nn
                       list_prod[opc-1]["precio"]=np
-                      print("articulo actualizado ")
+                      print("!articulo actualizado¡ ")
           case 4:
+                  
+          case 5:
                 
                 break
           case _:
