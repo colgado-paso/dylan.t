@@ -121,3 +121,86 @@
     #             print("opcion invalida ")
     # except Exception as e:
     #     print("el error es",e)
+#-------------------------------------------------------------------------------
+
+vehiculo = {
+    1:{"marca":"jeep",
+       "año":"2025",
+       "patente":"evch23",
+       "tipo":"camioneta"},
+    2:{"marca":"suzuki",
+       "año":"2020",
+       "patente":"eevv11",
+       "tipo":"moto"},
+     3:{"marca":"chevrolet",
+       "año":"2023",
+       "patente":"cchh22",
+       "tipo":"sub"}
+}
+
+def mostrar_vehiculo(dict):
+    for key, auto in dict.items():
+        print(key, auto)
+
+def validar_pass(clave):
+    Mayuscula = False
+    Minusculas = False
+    Numero = False
+    for palabra in clave:
+        if palabra.isupper():
+            Mayuscula = True
+        if palabra.islower():
+            Minusculas = True
+        if palabra.isdigit():
+            Numero = True
+    if Mayuscula and Minusculas and Numero and len(clave)==6:
+        print("esta bien escrito ")
+        return True
+    else:
+        print("esta mal escrito ")
+        return False
+    
+def ingrese_vehiculo(dict):
+    marca = input("ingrese la marca de auto: ")
+    año = input("ingrese el año del auto: ")
+    patente = input("ingrese la patente del auto: ")
+    print("seleccione el tipo del producto ")
+    print(" s -sedan")
+    print(" c -camioneta")
+    print(" m -moto")
+    tipo = input("ingrese el tipo (s/c/m): ").lower()
+    while tipo not in ["s", "c", "m"]:
+        print("tipo invalido. debe ser: \n s \n c \n m \n o")
+        tipo = input("ingrese el tipo (s/c/m): ").lower()
+
+    if validar_pass(patente):
+        nuevo_id = max(dict.keys(), default=0)+ 1
+        dict[nuevo_id] = {
+            "marca":marca,
+            "año":año,
+            "patente":patente,
+            "tipo":tipo
+        }
+    else:
+        print("error no cumple con el parametro ")
+
+def actualizar_vehiculo(dict):
+    mostrar_vehiculo(dict)
+    actualizar = int(input("¿ que vehiculo deseas actualizar? "))
+    while True:
+        print("""f
+              1.- marca 
+              2.- año
+              3.- patente
+              4.- tipo 
+              5.- salir
+              """)
+        
+        dato = int(input("¿ que dato quieres actualizar ? "))
+        match dato:
+            case 1:
+                act = input("actualizar marca: ")
+                dict[actualizar]["marca"] = act
+            case 2:
+                
+
