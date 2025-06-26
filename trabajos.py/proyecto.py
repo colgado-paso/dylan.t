@@ -123,84 +123,167 @@
     #     print("el error es",e)
 #-------------------------------------------------------------------------------
 
-vehiculo = {
-    1:{"marca":"jeep",
-       "año":"2025",
-       "patente":"evch23",
-       "tipo":"camioneta"},
-    2:{"marca":"suzuki",
-       "año":"2020",
-       "patente":"eevv11",
-       "tipo":"moto"},
-     3:{"marca":"chevrolet",
-       "año":"2023",
-       "patente":"cchh22",
-       "tipo":"sub"}
+# vehiculo = {
+#     1:{"marca":"jeep",
+#        "año":"2025",
+#        "patente":"evch23",
+#        "tipo":"camioneta"},
+#     2:{"marca":"suzuki",
+#        "año":"2020",
+#        "patente":"eevv11",
+#        "tipo":"moto"},
+#      3:{"marca":"chevrolet",
+#        "año":"2023",
+#        "patente":"cchh22",
+#        "tipo":"sub"}
+# }
+
+# def mostrar_vehiculo(dict):
+#     for key, auto in dict.items():
+#         print(key, auto)
+
+# def validar_pass(clave):
+#     Mayuscula = False
+#     Minusculas = False
+#     Numero = False
+#     for palabra in clave:
+#         if palabra.isupper():
+#             Mayuscula = True
+#         if palabra.islower():
+#             Minusculas = True
+#         if palabra.isdigit():
+#             Numero = True
+#     if Mayuscula and Minusculas and Numero and len(clave)==6:
+#         print("esta bien escrito ")
+#         return True
+#     else:
+#         print("esta mal escrito ")
+#         return False
+    
+# def ingrese_vehiculo(dict):
+#     marca = input("ingrese la marca de auto: ")
+#     año = input("ingrese el año del auto: ")
+#     patente = input("ingrese la patente del auto: ")
+#     print("seleccione el tipo del producto ")
+#     print(" s -sedan")
+#     print(" c -camioneta")
+#     print(" m -moto")
+#     tipo = input("ingrese el tipo (s/c/m): ").lower()
+#     while tipo not in ["s", "c", "m"]:
+#         print("tipo invalido. debe ser: \n s \n c \n m \n o")
+#         tipo = input("ingrese el tipo (s/c/m): ").lower()
+
+#     if validar_pass(patente):
+#         nuevo_id = max(dict.keys(), default=0)+ 1
+#         dict[nuevo_id] = {
+#             "marca":marca,
+#             "año":año,
+#             "patente":patente,
+#             "tipo":tipo
+#         }
+#     else:
+#         print("error no cumple con el parametro ")
+
+# def actualizar_vehiculo(dict):
+#     mostrar_vehiculo(dict)
+#     actualizar = int(input("¿ que vehiculo deseas actualizar? "))
+#     while True:
+#         print("""f
+#               1.- marca 
+#               2.- año
+#               3.- patente
+#               4.- tipo 
+#               5.- salir
+#               """)
+        
+#         dato = int(input("¿ que dato quieres actualizar ? "))
+#         match dato:
+#             case 1:
+#                 act = input("actualizar marca: ")
+#                 dict[actualizar]["marca"] = act
+#             case 2:
+#--------------------------------------------------------------------------------------
+
+
+compradores = {
+    1:{"nombre":"vip","codigo":"BBhh11"},
+    1:{"nombre":"vip","codigo":"HHcc22"}
 }
 
-def mostrar_vehiculo(dict):
-    for key, auto in dict.items():
-        print(key, auto)
-
-def validar_pass(clave):
-    Mayuscula = False
+def validar_codigo(codigo):
+    Mayusculas = False
     Minusculas = False
     Numero = False
-    for palabra in clave:
+    for palabra in codigo:
         if palabra.isupper():
-            Mayuscula = True
+            Mayusculas = True
         if palabra.islower():
             Minusculas = True
         if palabra.isdigit():
             Numero = True
-    if Mayuscula and Minusculas and Numero and len(clave)==6:
-        print("esta bien escrito ")
+    if Mayusculas and Minusculas and Numero and len(codigo)==6:
+        print("el codigo que has ingresado esta correcto ")
         return True
     else:
-        print("esta mal escrito ")
+        print("el codigo que has ingresado es invalido ")
         return False
     
-def ingrese_vehiculo(dict):
-    marca = input("ingrese la marca de auto: ")
-    año = input("ingrese el año del auto: ")
-    patente = input("ingrese la patente del auto: ")
-    print("seleccione el tipo del producto ")
-    print(" s -sedan")
-    print(" c -camioneta")
-    print(" m -moto")
-    tipo = input("ingrese el tipo (s/c/m): ").lower()
-    while tipo not in ["s", "c", "m"]:
-        print("tipo invalido. debe ser: \n s \n c \n m \n o")
-        tipo = input("ingrese el tipo (s/c/m): ").lower()
-
-    if validar_pass(patente):
-        nuevo_id = max(dict.keys(), default=0)+ 1
-        dict[nuevo_id] = {
-            "marca":marca,
-            "año":año,
-            "patente":patente,
-            "tipo":tipo
-        }
-    else:
-        print("error no cumple con el parametro ")
-
-def actualizar_vehiculo(dict):
-    mostrar_vehiculo(dict)
-    actualizar = int(input("¿ que vehiculo deseas actualizar? "))
+def comprar_entrada(compadores):
+    nombre = input("ingrese el nombre del comprador ")
+    if nombre in compradores:
+        print("el nombre ya esta registrado ")
+        return
+    tipo = input("ingrese el tipo de entrada (G/V): ")
+    if tipo not in ("G", "V"):
+        print("el tipo de entrada no es valido ")
+        return
     while True:
-        print("""f
-              1.- marca 
-              2.- año
-              3.- patente
-              4.- tipo 
-              5.- salir
-              """)
-        
-        dato = int(input("¿ que dato quieres actualizar ? "))
-        match dato:
-            case 1:
-                act = input("actualizar marca: ")
-                dict[actualizar]["marca"] = act
-            case 2:
-                
+        codigo = int(input("ingrese el codigo de confirmacion "))
+        if validar_codigo(codigo):
+            compadores[nombre] = {"tipo":tipo, "codigo":codigo}
+            print("compra realizada con exito ")
+            break
+
+def consulta_comprador(compradores):
+    nombre = input("ingrese el nombre del comprador a buscar ")
+    if nombre in compradores:
+        datos = compradores[nombre]
+    else:
+        print("el comprador no se encuentra ")
+
+def cancelar_compra(compradores):
+    nombre = input("ingrese el nombre del comprador a cancelar ")
+    if nombre in compradores:
+        del compradores[nombre]
+        print("compra cancelada ")
+    else:
+        print("no se pudo cancelar la compra ")
+
+def menu():
+    while True:
+        try:
+            print("""BIENVENIDOS AL MENU PRINCIPAL
+                  1.- Comprar entrada 
+                  2.- Consultar comprador
+                  3.- Cancelar compra
+                  4.- Salir""")
+            op = int(input("porfavor seleccione una opcion "))
+            if op == "1":
+                comprar_entrada(compradores)
+            elif op == "2":
+                consulta_comprador(compradores)
+            elif op == "3":
+                cancelar_compra(compradores)
+            elif op == "4":
+                print("saliendo del programa... ")
+                break
+            else:
+                print("error, opcion invalida ")
+        except Exception as e:
+            print("error", e)
+
+if __name__ == "__menu__":
+    menu()
+    
+    
 
